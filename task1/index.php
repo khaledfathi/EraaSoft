@@ -78,7 +78,6 @@ if ($degree >= 50 && $degree < 56){
 <?php
 /*task 5 check student degree */
 $description = "no pain , no gain ";
-str_contains($description, "gaisn") ;  
 
 if (str_contains($description, "gain")){
     echo ("success word\n"); 
