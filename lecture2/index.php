@@ -51,21 +51,21 @@
         <div>
             <h2 class="header">- Write php script to print numbers that accept division by 5 in h3</h2>
             <p class="codeLines">PHP code lines : 59 ~ 68 </p>
-                <form  method="POST">
-                    <label for="">Number </label>
-                    <input  type="number" name="num">
-                    <input  type="submit" value="Check">
-                </form>
-                <?php
-                    $num = $_POST['num']; 
-                    if(!$num){
-                        echo ""; 
-                    }elseif ($num%5){
-                        echo "<h3>{$num} is not accepted !</h3>";
-                    }else{
-                        echo "<h3>{$num} could divide by 5 </h3>";
-                    }
-                ?>
+            <form  method="POST">
+                <label for="">Number </label>
+                <input  type="number" name="num">
+                <input  type="submit" value="Check">
+            </form>
+            <?php
+                $num = $_POST['num']; 
+                if(!$num){
+                    echo ""; 
+                }elseif ($num%5){
+                    echo "<h3>{$num} is not accepted !</h3>";
+                }else{
+                    echo "<h3>{$num} could divide by 5 </h3>";
+                }
+            ?>
         </div><br>    
         <div>
             <h2 class="header"> - Task 1 (Write a PHP script which will display numbers from 1 to 100 in h2)</h2>
@@ -204,7 +204,6 @@
         <div>
             <h2 class="header">- Draw a tringle from (#) using for loop </h2>
             <p class="codeLines">PHP code lines : 202 ~ 215 </p>
-            <table>
                 <?php
                     for ($i=0; $i<10; $i++){
                         for ($j=0; $j<$i; $j++){
@@ -213,7 +212,6 @@
                         echo "<br>";
                     }
                 ?>
-            </table>
         </div><br> 
     </body>
 </html>
