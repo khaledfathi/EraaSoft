@@ -1,7 +1,7 @@
 <html>
     <head>
         <meta charset="utf-8">
-        <title>Lecture 2 Tasks</title>
+        <title>Lecture 1 Tasks</title>
         <style>
             .title{
                 color : white ; 
@@ -26,193 +26,168 @@
             .header , li{
                 color : red ; 
             }
-            span , p{
-                font-weight : bold;                
-            }
-            .prime{
-                color:green;
-            }
-            .notPrime{
-                color:red;
-            }
-            .odd{
-                color:#0004ff;
-            }
-            .even{
-                color:#280946;
-            }
-            td{
-                border: 1px solid black; 
+            p{
+                font-weight: bold ; 
             }
         </style>
     </head>
-    <body>
-        <h1 class="title">Lecture 2 Taskes</h1><hr><br>
+    <body>        
+        <h1 class="title">Lecture 1 Taskes</h1><hr><br>
         <div>
-            <h2 class="header">- Write php script to print numbers that accept division by 5 in h3</h2>
-            <p class="codeLines">PHP code lines : 59 ~ 68 </p>
+            <h2 class="header">- Make a calculator with these operations using if and elseif
+                <br>(Submission- Subtraction - Multiplication - Division - Power - Modulus)</h2>
+            <p class="codeLines">PHP code lines : 53 ~ 76 </p>
             <form  method="POST">
-                <label for="">Number </label>
-                <input  type="number" name="num">
-                <input  type="submit" value="Check">
+                <input type="number" name="value1">                
+                <select name="operator" id="">
+                    <option value="+">+</option>
+                    <option value="-">-</option>
+                    <option value="*">*</option>
+                    <option value="^">^</option>
+                    <option value="/">/</option>
+                    <option value="%">%</option>
+                </select>
+                <input type="number" name="value2">
+                <input type="submit" value="Calc"><span> * Result will shown under input after page is refreshed<span>
+            </form>
+            <?php                                
+            $value1 = $_POST['value1'] ;
+            $operator = $_POST['operator'] ;
+            $value2 = $_POST['value2'] ;                                        
+            if ( ($value1  && $value2) || ($value1 == 0 || $value2 == 0)){ 
+                if ($operator == "+"){
+                    echo ("<p>".$value1 ." + ". $value2 ." = ". ($value1 + $value2)."</p>"); 
+                }elseif ($operator == "-"){
+                    echo ("<p>".$value1 ." - ". $value2 ." = ". ($value1 - $value2)."</p>"); 
+                }elseif ($operator == "*"){
+                    echo ("<p>".$value1 ." * ". $value2 ." = ". ($value1 * $value2."</p>")); 
+                }elseif ($operator == "^"){
+                    echo ("<p>".$value1 ." ^ ". $value2 ." = ". ($value1 ** $value2."</p>")); 
+                }elseif ($operator == "/"){
+                    if ($value2 == 0 ){ 
+                        echo ("<p>can not divide by zero</p>");
+                    }else {
+                        echo ("<p>".$value1 ." / ". $value2 ." = ".($value1 / $value2)."</p>"); 
+                    }
+                }elseif ($operator == "%"){
+                    echo ("<p>".$value1 ." % ". $value2 ." = ".($value1 % $value2)."</p>");
+                }
+            }
+            ?>
+        </div><br>
+        <div>
+            <h2 class="header">- Make a program to check from degree of student to test these cases</h2>
+            <ul>
+                <li>>= 50 and < 65 is accepted</li>
+                <li>>= 65 and < 75 is good</li>
+                <li>>= 75 and < 85 is very good</li>
+                <li>>= 85 is Excellent</li>
+            </ul>
+            <p class="codeLines">PHP code lines : 91 ~ 106 </p>
+            <form method = "POST">
+                <input type="number" name="degree" >
+                <input type="submit" value = "Grade"><span> * Result will shown under input after page is refreshed<span>
             </form>
             <?php
-                $num = $_POST['num']; 
-                if(!$num){
-                    echo ""; 
-                }elseif ($num%5){
-                    echo "<h3>{$num} is not accepted !</h3>";
-                }else{
-                    echo "<h3>{$num} could divide by 5 </h3>";
-                }
-            ?>
-        </div><br>    
-        <div>
-            <h2 class="header"> - Task 1 (Write a PHP script which will display numbers from 1 to 100 in h2)</h2>
-            <p class="codeLines">PHP code lines : 74 ~ 80 </p>
-            <h2>
-            <?php
-                $count = 1 ; 
-                while($count <= 100){
-                    echo $count." , "; 
-                    $count++;
-                }
-            ?>    
-            </h2>           
-        </div><br>
-        <div>
-            <h2 class="header">- Type even numbers from 1 to 100 in paragraph using while</h2>
-            <p class="codeLines">PHP code lines : 87 ~ 93 </p>
-            <p>
-            <?php
-                $count = 1; 
-                while ($count <= 100){
-                    echo (!($count%2)) ? $count." " : "";
-                    $count++;
-                }
-            ?>
-            </p>
-        </div><br>
-        <div>
-            <h2 class="header">- Write php script witch will print odd numbers from 1 to 50 in span</h2>
-            <p class="codeLines">PHP code lines : 99 ~ 105 </p><br>
-            <?php
-                $count = 1; 
-                while ($count <= 50){
-                    echo ($count%2) ? "<span>{$count} </span>" : "";
-                    $count++;
-                }
-            ?>
-        </div><br>
-        <div>
-            <h2 class="header">- Write php script that print all chars from this string</h2>
-            <p class="codeLines">PHP code lines : 110 ~ 119 </p>
-            <?php
-                $string = "Lorem ipsum dolor sit amet consectetur adipisicing elit. Eligendi, aperiam."; 
-                echo "<p>String : {$string}</p>";
-
-                $count = 0 ; 
-                while ($count < strlen($string)){
-                    echo ($string[$count] === " ") ?  "<p> Letter ".($count+1)." : {Space} </p>" :  "<p> Letter ".($count+1)." : ".$string[$count]. "</p>";
-                    $count ++; 
-                }
-            ?>
-        </div><br>
-        <div>
-            <h2 class="header">- Create a script that displays 1-2-3-4-5-6-7-8-9-10 on one line.<br>- There will be no hyphen(-) at starting and ending position.</h2>            
-            <p class="codeLines">PHP code lines : 124 ~ 133 </p>
-            <?php
-                $count = 1 ; 
-                echo "<p>";
-                while ($count <= 10 ){
-                    echo $count; 
-                    echo ($count < 10) ?  "-" : ""; 
-                    $count ++ ; 
-                }
-                echo "</p>";
-            ?>
-        </div><br>  
-        <div>
-            <h2 class="header">- Write php script to get the submission for the numbers between 1 and 20 .</h2>
-            <p class="codeLines">PHP code lines : 138 ~ 146 </p>
-            <?php
-                $count=1; 
-                $res=0; 
-                while ($count <= 20 ){
-                    $res+=$count; 
-                    $count++; 
-                }
-                echo "<p>&#931;(1~20) = ".$res."</p>";
-            ?>
-        </div><br>
-        <div>   
-            <h2 class="header">- Write php script to display numbers between 1 and 50 and </h2>
-            <ul>
-                <li>If the number is prime ( type this number is prime )</li>
-                <li>If number is even  - type this number is even </li>
-                <li>If number is odd  - type this number is odd </li>
-            </ul>
-            <p class="codeLines">PHP code lines : 156 ~ 182 </p>
-            <?php
-                $count = 1 ; 
-                while ($count <= 50){
-                    $start = 2; 
-                    $flagPrime = 0; 
-                    if ($count === 1 ||$count === 2) $flagPrime = 1; 
-                    while ($start < $count ){
-                        if ($count%$start){
-                            $flagPrime = 1; 
-                        }else{
-                            $flagPrime = 0; 
-                            break;
-                        }
-                        $start++; 
-                    }
-                    $start =2; 
-                    if ($flagPrime){
-                        echo "<p class='prime'>";
-                        echo ($count%2) ? "{$count} is Prime and | Number is <span class='odd'>odd</span>": "{$count} is Prime | Number is <span class='even'>even</span>"; 
+                $degree = $_POST['degree']; 
+                if ($degree){
+                    if ($degree >= 50 && $degree < 56){
+                        echo "<p>Accepted</p>"; 
+                    }elseif ($degree >= 65 && $degree < 75){
+                        echo "<p>good</p>"; 
+                    }elseif ($degree >= 75 && $degree < 85){
+                        echo "<p>very good</p>"; 
+                    }elseif ($degree > 85){
+                        echo "<p>Excellent</p>"; 
                     }else {
-                        echo "<p class='notPrime'>";
-                        echo ($count%2) ? "{$count} is NOT Prime and | Number is <span class='odd'>odd</span>": "{$count} is NOT Prime | Number is <span class='even'>even</span>"; 
-                    }                    
-                    echo "</p>";
-                    $count++;
+                        echo "<p>Fail</p>"; 
+                    }    
+                }                
+            ?>
+        </div><br>
+        <div>
+            <h2 class="header">- Make random two numbers for ages and</h2>            
+            <ul>
+                <li>If the first number greater than second number <br>Print ( ahmed is older than mohmed )</li>
+                <li>If the second number is greater<br>Print ( mohamed is older than ahmed )</li>
+                <li>If age_one equal to age_two <br>Print ( age of ahmed and Mohamad is (age) )</li>
+            </ul>
+            <p class="codeLines">PHP code lines : 116 ~ 128 </p>
+            <?php
+                $ahmedAge1 = 10;
+                $mohamedAge2 = 20;
+                echo "<p>Age of Ahmed = {$ahmedAge1} , Age of Mohamed = {$mohamedAge2}</p>"; 
+                if ($ahmedAge1 === $mohamedAge2){
+                    echo "<p>age of Ahmed and Mohamed is {$ahmedAge1}<p>";
+                }
+                if ($ahmedAge1 < $mohamedAge2){
+                    echo "<p>Mohamed is older than Ahmed<p>";
+                }elseif ($ahmedAge1 > $mohamedAge2) {
+                    echo "<p>Ahmed is older than Mohamed</p>";
                 }
             ?>
-        </div><br>   
+        </div><br>
         <div>
-            <h2 class="header">- Write a php script to display a square 10 * 10 ( from 1 to 100 ) </h2>
-            <p class="codeLines">PHP code lines : 188 ~ 201 </p>
-            <table>
-                <?php
-                    $count = 1; 
-                    $innerCount = 1 ; 
-                    while ($count <= 100){
-                        echo "<tr>";                    
-                        while ($innerCount <= 10){
-                            echo "<td>".$count."</td>";
-                            $count++;
-                            $innerCount ++; 
-                        }
-                        echo "</tr>"; 
-                        $innerCount=1;                     
-                    }           
-                ?>
-            </table>
-        </div><br>   
-        <div>
-            <h2 class="header">- Draw a tringle from (#) using for loop </h2>
-            <p class="codeLines">PHP code lines : 202 ~ 215 </p>
-                <?php
-                    for ($i=0; $i<10; $i++){
-                        for ($j=0; $j<$i; $j++){
-                            echo "<span>#<span>";
-                        }
-                        echo "<br>";
-                    }
-                ?>
+            <h2 class="header">- Get two random strings from previous string</h2>            
+            <ul>
+                <li>If length of first string is greater than 20 and < 40 <br>Print ( string is week )</li>
+                <li>If length of first string is greater than 40 and < 80 <br>Print ( string is good )</li>
+                <li>If length of first string is greater than 80 <br>Print ( string is very good )</li>
+                <li>Compare between length of first and second string<br>
+                    - First case ( first is greater than second )<br>
+                    - Second case ( first is smaller than second )<br>
+                    - Third case ( first is equal than second )<br>
+                    - Print text according to every status
+                </li>
+            </ul>
+            <p class="codeLines">PHP code lines : 144 ~ 169 </p>
+            <?php
+                $str1 = "Lorem ipsum dolor sit amet consectetur adipisicing elit."; 
+                $str2 = "nam exercitationem eligendi expedita, provident distinctio non praesentium"; 
+                echo "<p>String 1 : {$str1}</p>"; 
+                echo "<p>String 2 : {$str2}</p><br>"; 
+
+                //check lenght of first string
+                $str1Size = strlen($str1);
+                $str2Size = strlen($str2);                
+                if ($str1Size > 20 && $str1Size < 40){
+                    echo ("<p>string is week</p>"); 
+                }elseif ($str1Size > 40 && $str1Size < 80){
+                    echo ("<p>string is good</p>"); 
+                }elseif ($str1Size > 80) {
+                    echo("<p>very good</p>");
+                } 
+
+                //compareing between first  string and second string
+                if ($str1Size > $str2Size){
+                    echo ("<p>first is greater than second</p>");
+                }elseif ($str1Size < $str2Size){
+                    echo ("<p>first is smaller than second</p>");
+                }elseif ($str1Size === $str2Size){
+                    echo ("<p>first is equal than second</p>");
+                }
+            ?>
         </div><br> 
+        <div>
+            <h2 class="header">- Check from this string</h2>
+            <ul>
+                <li>If the string have “gain”<br>Print ( success word )</li>
+                <li>If the string have ( peen )<br>Print ( success word )</li>
+                <li>Else ( wrong word</li>                
+            </ul>
+            <p class="codeLines">PHP code lines : 179 ~ 190 </p>
+            <?php
+                $description = "no pain , no gain ";
+                echo "<p>String : {$description} </p>";
+
+                if (str_contains($description, "gain")){
+                    echo "<p>success word</p>"; 
+                }elseif (str_contains($description, "peen")){
+                    echo "<p>success word</p>"; 
+                }else {
+                    echo "<p>wrong word</p>"; 
+                }
+            ?>
+        </div><br>
     </body>
 </html>
-
