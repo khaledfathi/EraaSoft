@@ -155,7 +155,7 @@
             <p class="codeLines">PHP code lines : 156 ~ 182 </p>
             <?php
                 $count = 1 ; 
-                while ($count <= 100){
+                while ($count <= 50){
                     $start = 2; 
                     $flagPrime = 0; 
                     if ($count === 1 ||$count === 2) $flagPrime = 1; 
