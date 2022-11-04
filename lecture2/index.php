@@ -212,7 +212,26 @@
                         echo "<br>";
                     }
                 ?>
-        </div><br> 
+        </div><br>
+        <div>
+            <h2 class="header">- Display the previous string </h2>
+            <p class="codeLines">PHP code lines : 220 ~ 231 </p>
+            <p>String : "12-23-34-45"</p>
+            <?php
+                $count = 1 ; 
+                echo "<p>";
+                while ($count <= 5){
+                    if ($count > 1 && $count < 5){
+                        echo $count."-"; 
+                    }
+                    echo $count;
+                    $count ++ ; 
+                }
+                echo "</p>";               
+            ?>
+        </div><br>  
     </body>
 </html>
+
+
 
