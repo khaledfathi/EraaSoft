@@ -101,11 +101,11 @@
                 }
                 $start =2; 
                 if ($flagPrime){
-                    echo "<p class='prime'>";
-                    echo ($count%2) ? "{$count} is Prime and | Number is <span class='odd'>odd</span>": "{$count} is Prime | Number is <span class='even'>even</span>"; 
+                    echo "<p >";
+                    echo ($count%2) ? "{$count} is Prime and | Number is <span>odd</span>": "{$count} is Prime | Number is <span >even</span>"; 
                 }else {
-                    echo "<p class='notPrime'>";
-                    echo ($count%2) ? "{$count} is NOT Prime and | Number is <span class='odd'>odd</span>": "{$count} is NOT Prime | Number is <span class='even'>even</span>"; 
+                    echo "<p >";
+                    echo ($count%2) ? "{$count} is NOT Prime and | Number is <span >odd</span>": "{$count} is NOT Prime | Number is <span >even</span>"; 
                 }                    
                 echo "</p>";
                 $count++;
