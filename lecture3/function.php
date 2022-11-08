@@ -1,6 +1,6 @@
 <html>
     <head>
-        <title>Lecture 3 Taskes</title>
+        <title>Lecture 3 Taskes [Funcions]</title>
     </head>
     <body>
         <!--Function Tasks-->
@@ -38,8 +38,7 @@
             function fullName ($firstName , $lastName){
                 return "$firstName $lastName"; 
             }            
-        ?>                
-        
+        ?>        
     </body>
 </html>
 

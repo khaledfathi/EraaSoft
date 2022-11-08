@@ -1,6 +1,6 @@
 <html>
     <head>
-        <title>Lecture 3 Taskes</title>
+        <title>Lecture 3 Taskes [Arrayis]</title>
     </head>
     <body>
         <!--Array Tasks-->        
@@ -32,8 +32,8 @@
             //Point 6
             $numbers = [10,20,30,40,50];
             $newNumbers = []; 
-            foreach ($numbers as $number) array_push($newNumbers , $number/5);        
-        
+            foreach ($numbers as $number) array_push($newNumbers , $number/3);            
+    
             //Point 7
             $numbers = [10,20,30,40,50];            
             array_push($numbers , 60 , 70 , 80);                            
@@ -44,7 +44,7 @@
                 ["rana ahmad",19],
                 ["maged khaled",25]
                 ] ;
-            foreach ($users as $data ) echo " Name : {$data[0]}<br> Age : {$data[1]} <br><hr>";        
+            foreach ($users as $data ) echo " Name : $data[0]<br> Age : $data[1] <br><hr>";        
         
             //Point 9
             $employees = [
@@ -53,17 +53,25 @@
                 ["maged hesham","maged@eraasoft.com","01024213361",4000],
                 ["ali mahmoud","ali@eraasoft.com","01142547485",2000],
                 ["nader elsayed","nader@eraasoft.com","01123659854",1000]
-                ];
-                echo "<table>";
-                    foreach ($employees as $row){                        
-                        echo "<tr>";
-                        foreach ($row as $item){
-                            echo "<td style='border:1px solid black;'>$item</td>";
-                        }
-                        echo "</tr>";
+                ];                
+                echo 
+                    "<table style='text-align:center;'>
+                        <tr>
+                            <th>Name</th>
+                            <th>Email</th>
+                            <th>Phone</th>
+                            <th>Salary</th>
+                        </tr>";
+                foreach ($employees as $row){                        
+                    echo "<tr>";
+                    foreach ($row as $item){
+                        echo "<td>$item</td>";
                     }
+                    echo "</tr>";
+                }
                 echo "</table>";        
         ?>
     </body>
 </html>
+
 
