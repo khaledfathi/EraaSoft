@@ -13,8 +13,8 @@
 
             //Point 2
             function checkString ($str , $num){
-                return (strlen($str) == $num) ? true : false ; 
-            }
+                return (strlen($str) > $num) ? true : false ; 
+            }            
 
             //Point 3
             function evenOrOdd ($num){
@@ -22,7 +22,7 @@
             }        
             
             //Point 4
-            function isArrayDataValid ($arr , $item){
+            function isDataValid ($arr , $item){
                 foreach ($arr as $element) {
                      if ($item === $element) return true;
                 }
