@@ -30,9 +30,18 @@
             }            
 
             //Point 5
-            function replaceString (&$str , $word){
-              // Requirments unclear
-            }
+            function replaceString (&$str , $wordToFind , $wordToReplace){
+                $words = explode(' ' , $str); 
+                $isReplaced = false ; 
+                foreach ($words as $index => $word){
+                    if ($word == $wordToFind){
+                        $words[$index]=$wordToReplace;
+                        $isReplaced = true ; 
+                    } 
+                }
+                $str = join (' ' , $words); 
+                return $isReplaced; 
+            }            
 
             //Point 6
             function fullName ($firstName , $lastName){
