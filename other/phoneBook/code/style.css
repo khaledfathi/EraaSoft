@@ -1,0 +1,87 @@
+h1{
+    text-align: center;
+}
+/***********/
+body{
+    display: grid;
+    grid-template-columns: repeat(2 , 50%);
+    grid-template-rows: repeat(2 , 50%);
+}
+.c1r1 , .c2r1 {
+    padding: 20px;
+    border-bottom: 5px solid black;
+}
+.c1r1{
+    grid-column: 1 ;
+    grid-row: 1;
+    border-right: 5px solid black ;
+    
+}
+.c2r1{
+    grid-column: 2;
+    grid-row: 1;
+}
+
+/***********/
+.register >  img {
+    width: 100px;
+    height: 100px;
+}
+.register , .register {
+    display: flex;
+    flex-direction: column;
+}
+.register > div > input[type="text"] , form > div > label,
+.search > div > input[type="text"] , form > div > label
+{
+    margin: 5px 0px;
+}
+.register > div > input,
+.search > div > input
+
+{ 
+    height: 30px;
+}
+.register > div > label,
+.search > div > label {
+    display: inline-block;
+    min-width: 100px;
+    line-height: 20px;    
+    
+}
+.search input[type="radio"]{    
+    padding: 0px;
+    vertical-align: middle;
+    margin-top : -5px;
+}
+.register > input[type="submit"],
+.search > input[type="submit"]{
+    position: relative;
+    left :15%;
+    margin-top:30px;
+    width: 100px;
+}
+
+/**********/
+.imgInTable{
+    width : 50px ;
+    height: 50px;
+    margin: 0% 20%;
+}
+.result{
+    grid-row: 2;
+    grid-column: 1 / span 2;    
+}
+.result > table{
+    border: 1px solid black;
+    border-collapse: collapse;
+    width : 50%;
+    position: relative;
+    left : 25%;
+    top :10px;
+}
+.result td, .result th{
+    border: 2px solid black;
+    padding: 5px;
+}
+
