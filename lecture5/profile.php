@@ -22,6 +22,7 @@
                     <p><span>Phone </span>".$recoed['phone']."</p>
                     <p><span>password </span>".$recoed['password']."</p>";
                     $notFound=false; 
+                    break;
             } 
         }
         echo ($notFound)? "<p>ID : ".$_GET['id']." is not found!<p>":"";

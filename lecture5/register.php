@@ -27,9 +27,6 @@ function formValidation($request , $nameLength=3 , $passwordLength=6 , $allowedV
     }elseif(empty($request['phone'])){
         $status['isValid']=false;
         $status['error']='Phone field is empty';
-    }elseif(!is_numeric($request['phone'])){
-        $status['isValid']=false;
-        $status['error']='Phone should has only digits';
     }elseif(strlen($request['password']) < $passwordLength){
         $status['isValid']=false;
         $status['error']="Password length should be greater than $passwordLength";
