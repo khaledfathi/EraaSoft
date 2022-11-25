@@ -4,9 +4,10 @@
     <meta charset="UTF-8">
     <title></title>
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
 </head>
 <body>
-    <form action="register.php" method="POST">
+    <form class="index" action="register.php" method="POST">
         <div>
             <label for="">User Name</label>
             <input type="text" name="un">
@@ -31,7 +32,9 @@
 
 <?php
 session_start(); 
-if($_SESSION['login']){
-    header('location: profile.php'); 
+if(isset($_SESSION['login'])){
+    if($_SESSION['login']){
+        header('location: profile.php'); 
+    }
 }
 ?>

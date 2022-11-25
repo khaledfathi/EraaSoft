@@ -1,0 +1,54 @@
+a{
+    color: black; 
+    text-decoration:none; 
+    cursor:default;
+}
+table{
+    width:90%;
+    margin: auto ; 
+margin-bottom:30px;
+}
+table , th , td{
+    padding: 10px;
+    border: 1px solid black; 
+    border-collapse: collapse;
+}
+th {
+    text-align:center;
+}
+span {
+    color:blue;
+}
+.index  , .login{
+    border : 1px solid black ; 
+    border-radius:20px;
+    padding : 20px;
+    width : 380px;
+    margin:auto ;
+}
+.index > div > label , .login > div > label {
+    display:inline-block;
+    width :150px; 
+    margin-bottom:10px;
+}
+.index > input[type='submit'] , .login > input[type='submit']{
+    font-weight:bold;
+    width: 50%;
+    margin: 10px auto ;
+    display: block;
+}
+.index > button , .login > button{
+    display : block;
+}
+.error {
+    color:red; 
+    text-align:center;
+}
+.profile{
+    border : 1px solid black ; 
+    border-radius:20px;
+    padding : 20px;
+    width : 550px;
+    margin:auto ;
+}
+

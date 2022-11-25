@@ -28,7 +28,7 @@ function isValid($request , $nameLength , $passwordLength){
     $valid=['state'=>true, 'error'=>''];
     if(empty($request['un']) || empty($request['email']) || empty($request['pw']) ){
         $valid['state']=false; 
-        $valid['error']="All Field are Required!";
+        $valid['error']="All Fields are Required!";
     }elseif (strlen($request['un']) < $nameLength){
         $valid['state']=false; 
         $valid['error']="Name should have at least $nameLength Characters";
@@ -53,11 +53,13 @@ function addRecord($fileName , $record){
     unset ($record['cpw']);
     $id = 1; 
     if(!file_exists($fileName)){
+        $record['pw']= md5($record['pw']);
         $record['id']=$id; 
         $record= [$record]; 
         $recordToJSON= json_encode($record , true);
         file_put_contents($fileName , $recordToJSON);
     }else {
+        $record['pw']= md5($record['pw']);
         $newRecord = json_decode(file_get_contents($fileName), true);
         $id =end($newRecord)['id'] +=1;  
         $record['id'] = $id ; 
@@ -69,9 +71,10 @@ function addRecord($fileName , $record){
 
 /*** SERVER  ***/
 session_start();
+if (isset($_SESSION['login'])){
 if ($_SESSION['login']){header('location: profile.php');} 
+}
 if($_SERVER['REQUEST_METHOD']==='POST'){
-    echo "<pre>";
     $request= sanitizing($_POST);
     $valid = isValid($request , $nameLength=3 , $passwordLength=6); 
     if ($valid['state']){
@@ -79,7 +82,7 @@ if($_SERVER['REQUEST_METHOD']==='POST'){
         $_SESSION['login']=true;
         header('location: profile.php'); 
     }else {
-        echo $valid['error'];
+        echo"<h3>".$valid['error']."</h3><button><a href='register.php' style='text-decoration:none;'>Back</a></button>";
     }
 }else{
     header('location: index.php'); 
