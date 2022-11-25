@@ -1,0 +1,26 @@
+{
+    "p1":{
+        "name": "Lenovo",
+        "price":2300
+    },
+    "p2":{
+        "name": "HP",
+        "price":3000
+    },
+    "p3":{
+        "name": "DELL",
+        "price":4000
+    },
+    "p4":{
+        "name":"ACER",
+        "price":2000
+    },
+    "p5":{
+        "name":"LG",
+        "price":4000
+    },
+    "p6":{
+        "name":"GigaByte",
+        "price":3000
+    }
+}
