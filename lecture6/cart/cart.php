@@ -31,9 +31,10 @@ if($_SERVER['REQUEST_METHOD']==='POST'){
     <meta charset="UTF-8">
     <title></title>
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+<link rel="stylesheet" href="style.css">
 </head>
 <body>
-    <form action="cart.php" method='post'>
+    <form class="cart" action="cart.php" method='post'>
             <?php 
             if (isset ($_SESSION['items'])){
                 echo "
