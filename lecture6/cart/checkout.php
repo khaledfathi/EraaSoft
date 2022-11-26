@@ -57,7 +57,7 @@ if ($_SERVER['REQUEST_METHOD']==='POST'){
             "<p> Address : ".$request['address']."</p>".
             "<p>Email : ".$request['email']."</p>".
             "<p>phone : ".$request['phone']."</p>".
-            "<hr><p>Thank you thank you for choosing our shop.</p>
+            "<hr><p>Thank you for choosing our shop.</p>
             <button><a href='index.php'>Continue Shoping</a></button>
             </body></html>";
         unset ($_SESSION['items']); 
