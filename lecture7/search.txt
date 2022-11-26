@@ -1,0 +1,4 @@
+ no relational DB  vs relational DB  
+store engine [ inno DB , myisam]
+
+task = ecomerce ERD + creating database
