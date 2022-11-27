@@ -1,35 +1,37 @@
 # Relational DB vs None Relational DB 
 
 # Relational (SQL)
-* Structure 
- 1.Tables
- 2.Constraints 
- 2.Relations 
-* Storage 
-1.Concentrated
-* Scale 
-1,Vertical (better machine)
-2.horizontal (mote machines)
-* Access 
-1.Raw SQL - like (SELECT * FROM ...)
-2.Object Relational Mappers 
+
+
+1. **Structure** 
+   * Tables
+   * Constraints 
+   * Relations 
+2. **Storage** 
+   * Concentrated
+3. **Scale** 
+   * Vertical (better machine)
+   * horizontal (mote machines)
+4. **Access** 
+   * Raw SQL - like (SELECT * FROM ...)
+   * Object Relational Mappers 
 --- 
 # None Relational (NoSQL)
 #### Anything that is non-relational 
 #### has many implementations .. Table , Document , Graph
 #### built to scale with high performance , but queries are less flexible  
-* Structure 
-1.Table 
-2.Document (JSON)
-2.Graph
-3.Depend on (key , value) Store
-* Storage 
-1.Hashing Input 
-* Scale 
-1.Add more partitions  
-* Access 
-1.REST APIs 
-2.CRUD in Vendor Specific language 
+1. **Structure** 
+   * Table 
+   * Document (JSON)
+   * Graph
+   * Depend on (key , value) Store
+2. **Storage** 
+   * Hashing Input 
+3. **Scale** 
+   * Add more partitions  
+4. **Access** 
+   * REST APIs 
+   * CRUD in Vendor Specific language 
 
 ---
 ### When to use what ?
@@ -49,3 +51,4 @@
 * small project + low scale + unknown access patterns -> **SQL**
 * Large project + high scale + relational queries -> **SQL**
 * medium/large project + high scale +high performance -> **NoSQL**
+---
