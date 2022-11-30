@@ -1,0 +1,108 @@
+/*General*/
+body{
+    padding : 0px;
+    margin: 0px;
+}
+
+/*GRID*/
+.container {
+    margin :0px;
+    background-color:#897; 
+    width 100%; 
+    display : grid ; 
+    grid-template-rows:repeat(10 , 10%); 
+    grid-template-columns:repeat(10 , 10%); 
+}
+.header {
+    background-color:#f65; 
+    grid-column: 1 /span 10; 
+    grid-row: 1; 
+}
+.nav{
+    background-color:#065; 
+    grid-column: 1 / span 2; 
+    grid-row: 2 /span 8; 
+    min-height : 85vh; 
+} 
+.content{
+    background-color:#91f; 
+    grid-column: 3 / span 8; 
+    grid-row: 2 /span 8; 
+} 
+.footr{
+    background-color:#065; 
+    grid-column: 1 / span 3; 
+    grid-row: 10; 
+}
+
+/*HEADER*/
+.header > h1 {
+    text-align:center;
+}
+
+/*CONTENT*/
+.search {
+    background-color:#c8c;
+}
+.category{
+    background-color:#7e6;
+}
+.courses{
+    background-color:#4fd;
+}
+.students{
+    background-color:#ee8;
+}
+/*NAV*/
+.nav > ul  {
+    padding : 0px; 
+}
+.nav > ul > li {
+    list-style:none;
+    border: 1px solid black ;
+    border-radius: 15px; 
+    padding :  2px 5px;
+    margin : 15px auto ; 
+    text-align: center; 
+    width : 70%; 
+    cursor : pointer; 
+    user-select : none; 
+}
+
+
+/**********/
+
+.search {
+    display : none; 
+}
+
+/*-----------*/
+.category{
+    display : none; 
+}
+.addCategoryFields{
+    display:none; 
+}
+
+/*-----------*/
+.courses{
+    display : block; 
+}
+.addCourseFields{
+    display : none; 
+}
+
+/*-----------*/
+.addStudentsFields{
+    display : none; 
+}
+.students{
+    display : none; 
+}
+/*---compine----*/
+.search ,
+.category , 
+.courses,
+.students{
+    padding:20px;
+}
