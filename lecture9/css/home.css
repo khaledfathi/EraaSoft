@@ -88,6 +88,19 @@ body{
 .addCategoryFields{
     display:none; 
 }
+.categoryBlockDiv{
+    display : flex; 
+    flex-direction:row; 
+    flex-wrap:wrap;
+}
+.categoryBlockDiv > div{
+    width: 100px; 
+    height: 100px; 
+    margin : 15px; 
+    background-color : gray; 
+    text-align: center;
+    line-height:100px;
+}
 
 /*-----------*/
 .courses{

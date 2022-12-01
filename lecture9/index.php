@@ -38,7 +38,7 @@
                     <input type="text">
                     <button id="searchButton">Search</button>
                 </div>
-                <div>Search Results</div>
+                <div id="searchBlockDiv">Search Results</div>
             </div>
             
             <div id="categoryDiv" class="category" >
@@ -48,7 +48,7 @@
                     <input id="categoryName" type="text">
                     <button id="requestAddCategoryButton" >Add</button>
                 </div>
-                <div>category blocks</div>
+                <div id="categoryBlockDiv" class="categoryBlockDiv"></div>
             </div>
             
             <div id="coursesDiv" class="courses">
@@ -64,7 +64,7 @@
                     </select>
                     <button >Add</button>
                 </div>
-                <div>category blocks</div>
+                <div id="courseBlockDiv">category blocks</div>
             </div>
 
             <div id="studentsDiv" class="students">
@@ -78,7 +78,7 @@
                     <input type="text">
                     <button >Add</button>
                 </div>
-                <div>
+                <div id="studentBlockDiv">
                     student table block
                 </div>
             </div>

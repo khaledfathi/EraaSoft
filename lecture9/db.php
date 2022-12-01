@@ -38,7 +38,7 @@ function createDB (){
         use `db`;
 
         CREATE TABLE  IF NOT EXISTS `category` (id INT NOT NULL  AUTO_INCREMENT PRIMARY KEY,
-                                name VARCHAR(100));
+                                name VARCHAR(100) UNIQUE);
 
         CREATE  TABLE IF NOT EXISTS `courses` (id INT NOT NULL AUTO_INCREMENT PRIMARY KEY,
                                  category_id INT NOT NULL ,

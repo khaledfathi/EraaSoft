@@ -14,6 +14,10 @@ const addStudentsButton= document.querySelector('#addStudentsButton');
 const  addCategoryFields= document.querySelector('#addCategoryFields');
 const  addCourseFields= document.querySelector('#addCourseFields');
 const  addStudentsFields= document.querySelector('#addStudentsFields');
+//section block div
+const searchBlockDiv = document.querySelector('#searchBlockDiv');
+const categoryBlockDiv = document.querySelector('#categoryBlockDiv');
+const courseBlockDiv = document.querySelector('#courseBlockDiv');
 //category section 
 const requestAddCategoryButton = document.querySelector('#requestAddCategoryButton'); 
 const categoryName = document.querySelector('#categoryName'); 
@@ -107,7 +111,14 @@ postData = async (url , data)=>{
 window.addEventListener('load', ()=>{
     requestBody['section']='onload'; 
     postData('db.php' , requestBody).then ((response)=>{
-        console.log(response); 
+        response = JSON.parse(response); 
+        for (let i of response.data.category){
+            let element = document.createElement('div') ; 
+            element.innerHTML=i[0];
+            element.classList.add("categoryItem"); 
+            categoryBlockDiv.appendChild(element); 
+            console.log(i); 
+        }
     }); 
 }); 
 
@@ -124,12 +135,9 @@ addCategoryButton.addEventListener('click' , ()=>{
 });
 
 requestAddCategoryButton.addEventListener('click', ()=>{
-//aaaaaaaaaaaaaaaa
-    //reques 
     requestBody.section='category'; 
     requestBody.data.action='create'; 
     requestBody.data.categoryName= categoryName.value ; 
-    //response
     postData('db.php' , requestBody).then((response)=>{
         response = JSON.parse(response); 
         if (response.state){
@@ -138,7 +146,6 @@ requestAddCategoryButton.addEventListener('click', ()=>{
         }else{
             alert (response.data.msg); 
         }
-
     }); 
 })
 
