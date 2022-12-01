@@ -14,7 +14,7 @@
             <ul id="ulNav">
                 <li value ="1">Search</li>
                 <li value="2">Category</li>
-                <li value="3">Courses</li>
+                <li class="navSelected" value="3">Courses</li>
                 <li value="4">Students</li>
             </ul>
         </div>
@@ -45,8 +45,8 @@
                 <button id="addCategoryButton">New Category</button>
                 <div id="addCategoryFields" class="addCategoryFields">
                     <label for="">Category Name</label>
-                    <input type="text">
-                    <button >Add</button>
+                    <input id="categoryName" type="text">
+                    <button id="requestAddCategoryButton" >Add</button>
                 </div>
                 <div>category blocks</div>
             </div>
@@ -82,6 +82,7 @@
                     student table block
                 </div>
             </div>
+            <form><input name="data" , id="data" type="hidden" value = "aaa"></form>
         </div>
         <div class="footer">footer</div>
     </div>

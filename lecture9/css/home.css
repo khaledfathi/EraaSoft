@@ -68,8 +68,13 @@ body{
     cursor : pointer; 
     user-select : none; 
 }
-
-
+.nav > ul > li:hover  {
+    background-color:red;
+    color: white;
+}
+.navSelected{
+    background-color:white;
+}
 /**********/
 
 .search {
