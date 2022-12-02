@@ -109,7 +109,6 @@ function edit ($id , $categoryName){
 }
 
 /*SERVER*/
-echo "<pre>"; 
 $currentSection=''; 
 if ($_SERVER['REQUEST_METHOD']==='POST'){
     $currentSection = ''; 
@@ -139,7 +138,6 @@ if ($_SERVER['REQUEST_METHOD']==='POST'){
     }
 
 }
-echo "</pre>"; 
 ?>
 
 
