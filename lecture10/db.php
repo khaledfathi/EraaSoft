@@ -1,5 +1,5 @@
 <?php
- //This task was required from Eng. Mohamed Amr
+ //This task was required by Eng. Mohamed Amr
 
 class database {
     //connection
