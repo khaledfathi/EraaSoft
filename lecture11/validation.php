@@ -1,5 +1,7 @@
 <?php
 
+//required by Eng.Mohamed Amr
+
 class validation {
     
     private string $text; 
